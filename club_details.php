@@ -46,8 +46,8 @@
 
 
 <?php
-		print '<ul class="rounded"><li>'.$name.'<small>'.$clubcode.'</small></li></ul>';
-		print '<ul class="rounded"><li>'.$league.'</li></ul>';
+		print '<ul class="rounded"><li>'.$name.'<small>'.$clubcode.'</small></li>';
+		print '<li>'.$league.'</li></ul>';
 ?>
             <ul class="individual">
                 <li><a href="club_venues.php?snm=<?php print $summary;?>" target="_webapp">Venues</a></li>
@@ -60,7 +60,7 @@
 		}
 
 		if ($league == "Nottinghamshire League") {
-			print '<ul class="rounded"><li class="forward"><a href="club_tables.php?snm='.$summary.'" target="_webapp">League Tables</a></li>';
+			print '<ul class="rounded"><li class="forward"><a href="club_tables.php?cnm='.$summary.'" target="_webapp">League Tables</a></li>';
 		$teamsummary="";
 		if ($ladies > 0) {
 			$teamsummary=$teamsummary.$ladies.' Ladies, ';
@@ -72,6 +72,7 @@
 			$teamsummary=$teamsummary.$mixed.' Mixed, ';
 		}
 			print '<li><em>'.substr($teamsummary,0, -2).'</em></li></ul>';
+			print '<ul class="rounded"><li class="forward"><a href="../scorecard/'.$summary.'.html" target="_webapp">Club Scorecard</a></li></ul>';
 		}
 
         if (strlen($assoc) > 0) {

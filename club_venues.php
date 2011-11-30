@@ -1,21 +1,21 @@
 <?php include("../include/toplogin.php");
 
-	if (isset($_GET['cnm'])) {
-		$cnm=strtolower($_GET['cnm']);
+	if (isset($_GET['snm'])) {
+		$snm=strtolower($_GET['snm']);
 	} else {
 		header("location: clubs.php");
 	}
 
-	if (strlen($cnm) < 1 ) {
+	if (strlen($snm) < 1 ) {
 		header("location: clubs.php");
 	}
 
 	$title="Club Venues";
-	$back="club_details.php?cnm=".$cnm;
+	$back="club_details.php?snm=".$snm;
 	include("head.php");
 
 
-	$get_sql ="SELECT * FROM tbl_clubs WHERE summary_name ='".$cnm."'";
+	$get_sql ="SELECT * FROM tbl_clubs WHERE summary_name ='".$snm."'";
 
 	$get_results = mysql_query($get_sql,$cn) or die(mysql_error());
 
@@ -40,10 +40,10 @@
 			$ven_type = $get_row_ven['club_night_type'];
 			$ven_night = $get_row_ven['day'];
 			$ven_time = $get_row_ven['club_night_time'];
-			$quoted_name = "'".$ven_name."'";
+			$vid = $get_row_ven['venue_id'];
 
 			print '<ul class="rounded"><li>'.$ven_type.'</li>';
-			print '<li><a href="venue_details.php?vnm='.$quoted_name.'" target="_webapp">'.$ven_name.'</a></li>';
+			print '<li><a href="venue_details.php?vid='.$vid.'" target="_webapp">'.$ven_name.'</a></li>';
 			print '<li>'.$ven_night.'<small>'.str_replace(" ","",$ven_time).'</small></li></ul>';
 
 		}

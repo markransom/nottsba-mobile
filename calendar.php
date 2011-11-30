@@ -2,8 +2,13 @@
 	$title="Calendar";
 	include("head.php");
 
+	$where="";
+	if (isset($_GET['section'])) {
+		$section=$_GET['section'];
+		$where=" WHERE county_levels_id = '".$section."'";
+	}
 
-    $get_sql ="SELECT * FROM tbl_calendar ORDER BY calendar_date DESC";
+	$get_sql ="SELECT * FROM tbl_calendar ".$where." ORDER BY calendar_date DESC";
 	$get_results = mysql_query($get_sql,$cn) or die(mysql_error());
 
 	for ($i=1; $i<5; $i++) {

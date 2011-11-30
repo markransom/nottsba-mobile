@@ -4,13 +4,13 @@
 	include("head.php");
 
 
-	$vnm = $_GET['vnm'];
+	$vid = $_GET['vid'];
 
-	if (strlen($vnm) < 1 ) {
+	if (strlen($vid) < 1 ) {
 		header("location: venues.php");
 	}
 
-	$get_sql ="SELECT * FROM tbl_venues WHERE venue =$vnm";
+	$get_sql ="SELECT * FROM tbl_venues WHERE venue_id = $vid";
 
 	$get_results = mysql_query($get_sql,$cn) or die(mysql_error());
 
@@ -23,7 +23,7 @@
 	$map = $get_row['venue_map'];
 	$venue_id = $get_row['venue_id'];
 
-	$get_sql ="SELECT * FROM tbl_club_venues WHERE venue_id =$venue_id";
+	$get_sql ="SELECT * FROM tbl_club_venues WHERE venue_id = $vid GROUP BY club_reference";
 
 	$get_results = mysql_query($get_sql,$cn) or die(mysql_error());
 	$num_clubs = mysql_num_rows($get_results);
@@ -46,7 +46,7 @@
 	}
 
 	$quoted_venue="'".$name."'";
-	print '<ul class="rounded"><li><a href="clubs.php?vnm='.$quoted_venue.'" target="_webapp">Associated Clubs</a><small class="counter">'.$num_clubs.'</small></li></ul>';
+	print '<ul class="rounded"><li><a href="clubs.php?vid='.$vid.'" target="_webapp">Associated Clubs</a><small class="counter">'.$num_clubs.'</small></li></ul>';
 
 	print '</ul>';
 

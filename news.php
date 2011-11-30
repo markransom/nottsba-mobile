@@ -3,8 +3,15 @@
 	$back="Index";
 	include("head.php");
 
+	$where="";
+	if (isset($_GET['section'])) {
+		$section=$_GET['section'];
+		$where=" WHERE county_levels_id = '".$section."'";
+	}
 
-    $get_sql ="SELECT * FROM tbl_news ORDER BY news_date DESC";
+
+    	$get_sql ="SELECT * FROM tbl_news ".$where." ORDER BY news_date DESC";
+
 	$get_results = mysql_query($get_sql,$cn) or die(mysql_error());
 
 	for ($i=1; $i<5; $i++) {
