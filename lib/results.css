@@ -1,0 +1,89 @@
+@charset "utf-8";
+
+.current .score_td_hdr a:link {color: #0000FF; text-decoration: none; }
+.current .score_td_hdr a:visited {color: #0000FF; text-decoration: none; }
+.current .score_td_name a:link {color: #0000FF; text-decoration: none; }
+.current .score_td_name a:visited {color: #0000FF; text-decoration: none; }
+
+.current table {
+margin-left:auto;
+margin-right:auto;
+text-align:center;
+}
+
+.current td {
+background-color:#FFF;
+border:solid 0 #999;
+border-bottom:solid 1px #BFBFBF;
+font:12px normal Verdana, Geneva, sans-serif;
+padding:5px;
+width:577px;
+}
+
+.current .scoretable {
+margin-left:auto;
+margin-right:auto;
+text-align:center;
+}
+
+.current .score_td_hdr {
+color: #000000;
+background-color:#CCC;
+font:12px normal Verdana, Geneva, sans-serif;
+margin-top:4px;
+text-align:left;
+width:50px;
+}
+
+.current .score_pts {
+background-color:#CCC;
+color: #000000;
+font:12px normal Verdana, Geneva, sans-serif;
+margin-top:4px;
+text-align:right;
+width:20px;
+}
+
+.current .score_td_rule {
+background-color:#FFF;
+border:0;
+font:12px normal Verdana, Geneva, sans-serif;
+text-align:left;
+width:45px;
+}
+
+.current .score_td_name {
+background-color:#FFF;
+color: #0000FF;
+border:0;
+border-bottom:solid 1px #CCC;
+font:12px normal Verdana, Geneva, sans-serif;
+padding-right:40px;
+text-align:left;
+width:150px;
+}
+
+.current .score_td_name_highlight {
+background-color:#FFF;
+font-weight:bold;
+color: #000000;
+border:0;
+border-bottom:solid 1px #CCC;
+font:12px normal Verdana, Geneva, sans-serif;
+padding-right:40px;
+text-align:left;
+width:150px;
+}
+
+.current .score_td {
+background-color:#FFF;
+color: #000000;
+border:0;
+border-bottom:solid 1px #CCC;
+border-left:solid 0 #FFF;
+border-right:solid 0 #FFF;
+font:12px normal Verdana, Geneva, sans-serif;
+text-align:right;
+width:20px;
+}
+
